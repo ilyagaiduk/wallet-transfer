@@ -18,6 +18,7 @@ class CreateBalanceTable extends Migration
             $table->bigInteger('score');
             $table->string('user_id');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

@@ -30,9 +30,9 @@ Auth::routes([
 ]);
 //переводы
 Route::group(['prefix' => 'operation', 'middleware' => ['auth']], function(){
-    Route::match(['get', 'post'], '/transfer', 'FinanceController@transfer')->name('operation.transfer');
-    Route::match(['get', 'post'], '/refill', 'FinanceController@refill')->name('operation.refill');
-    Route::match(['get', 'post'], '/withdrawal', 'FinanceController@withdrawal')->name('operation.withdrawal');
+    Route::post('/transfer', 'FinanceController@transfer')->name('operation.transfer');
+    Route::post('/refill', 'FinanceController@refill')->name('operation.refill');
+    Route::post('/withdrawal', 'FinanceController@withdrawal')->name('operation.withdrawal');
 });
 //admin панель
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){

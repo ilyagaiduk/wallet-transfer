@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class Balance extends Model
 {
+    public function user()
+    {
+        return $this->belongsTo(Balance::class);
+    }
     public function UserBalance($id) {
         $balance = DB::table('balance')
             ->where('user_id', '=', $id)

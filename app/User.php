@@ -54,5 +54,9 @@ class User extends Authenticatable
             ->get();
         return $users;
     }
+    public function balance()
+    {
+        return $this->hasOne(Balance::class);
+    }
 
 }
